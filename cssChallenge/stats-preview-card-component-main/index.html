@@ -13,13 +13,87 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
+    @media(min-width:768px) {
+      .container {
+        flex-direction: column-reverse;
+      }
+
+      .image-container {
+        background-image: url('./images/image-header-mobile.jpg');
+        width: 564px;
+        height: 480px;
+      }
+
+      .text-border {
+        width: 564px;
+        height: 580px;
+      }
+
+      .text-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr 2fr;
+        margin: 4rem;
+        font-family: "Inter";
+      }
+
+      .text-container>* {
+        text-align: center;
+      }
+
+      .third-line {
+        grid-column: 2/3;
+        margin-top: 0px;
+      }
+
+      .third-line>ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+      }
+      ul>li{
+        margin: 0.2rem;
+      }
     }
 
-    .attribution a {
-      color: hsl(228, 45%, 44%);
+    @media(min-width:992px) {
+      .container {
+        flex-direction: row;
+      }
+
+      .image-container {
+        background-image: url('./images/image-header-desktop.jpg');
+        width: 540px;
+        height: 446px;
+      }
+
+      .text-border {
+        width: 540px;
+        height: 446px;
+      }
+
+      .text-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        margin: 4rem;
+        font-family: "Inter";
+      }
+
+      .text-container>* {
+        text-align: left;
+      }
+
+      .third-line {
+        grid-column: 1/4;
+      }
+
+      .third-line>ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding-left: 0px;
+      }
     }
 
     body {
@@ -29,7 +103,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height:98vh;
+      height: 98vh;
     }
 
     .container {
@@ -37,17 +111,9 @@
       justify-content: center;
       align-items: center;
     }
-    .text-border{
-      width:540px;
-      height:446px;
-      background-color: rgb(26,25,56);           
-    }
-    .text-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      margin:4rem;
-      font-family: "Inter";
+
+    .text-border {
+      background-color: rgb(26, 25, 56);
     }
 
     .first-line {
@@ -59,29 +125,30 @@
 
     .second-line {
       grid-column: 1/4;
-      color:rgb(102,101,124);
+      color: rgb(102, 101, 124);
       margin-top: 0;
     }
-    .text-container>div{
+
+    .text-container>div {
       padding-right: 1rem;
       margin-top: 1.5rem;
       text-transform: uppercase;
-      color:rgb(102,101,124);
+      color: rgb(102, 101, 124);
     }
-    .image-container{
-      background-color: rgb(122,69,165);
-    }
-    img{
-      display:block;
+
+    .image-container {
+      background-color: rgb(122, 69, 165);
       opacity: 0.4;
     }
-    p>span{
-      color:rgb(122,69,165);
+
+    p>span {
+      color: rgb(122, 69, 165);
     }
-    div>span{
+
+    li>span {
       font-size: 1rem;
-      font-weight: bold; 
-      color:white;      
+      font-weight: bold;
+      color: white;
     }
   </style>
 </head>
@@ -90,22 +157,21 @@
   <div class='container'>
     <div class="text-border">
       <div class="text-container">
-        <p class="first-line">Get <span>insights</span>  that help your business grow.</p>
-        <p class="second-line">Discover the benefits of data analytics and make better decisions regarding revenue, customer
+        <p class="first-line">Get <span>insights</span> that help your business grow.</p>
+        <p class="second-line">Discover the benefits of data analytics and make better decisions regarding revenue,
+          customer
           experience, and overall efficiency.</p>
-        <div class="t1"><span>10k+</span> companies</div>
-        <div class="t2"><span>314</span>   templates</div>
-        <div class="t3"><span>12m+</span>   queries</div>
+        <div class="third-line">
+          <ul>
+            <li><span>10k+</span> companies</li>
+            <li><span>314</span> templates</li>
+            <li><span>12m+</span> queries</li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="image-container">
-      <img src="images/image-header-desktop.jpg" alt="image on the right"/>
-    </div>
+    <div class="image-container"></div>
   </div>
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
 </body>
 
 </html>

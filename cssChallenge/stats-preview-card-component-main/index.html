@@ -18,40 +18,35 @@
         flex-direction: column-reverse;
       }
 
-      .image-container {
+      .container__image {
         background-image: url('./images/image-header-mobile.jpg');
         width: 564px;
         height: 480px;
       }
 
-      .text-border {
+      .container__text__layout {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr 2fr;
         width: 564px;
         height: 580px;
       }
 
-      .text-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr 1fr 2fr;
-        margin: 4rem;
-        font-family: "Inter";
-      }
-
-      .text-container>* {
+      .container__text__layout>* {
         text-align: center;
       }
 
-      .third-line {
+      .container__text__footer {
         grid-column: 2/3;
         margin-top: 0px;
       }
 
-      .third-line>ul {
+      .container__text__footer>ul {
         display: flex;
         flex-direction: column;
         list-style: none;
       }
-      ul>li{
+
+      ul>li {
         margin: 0.2rem;
       }
     }
@@ -61,34 +56,29 @@
         flex-direction: row;
       }
 
-      .image-container {
-        background-image: url('./images/image-header-desktop.jpg');
+      .container__image {
+        background: url('./images/image-header-desktop.jpg');
+        opacity: .5;
         width: 540px;
         height: 446px;
       }
 
-      .text-border {
-        width: 540px;
-        height: 446px;
-      }
-
-      .text-container {
-        display: grid;
+      .container__text__layout {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
-        margin: 4rem;
-        font-family: "Inter";
+        width: 540px;
+        height: 446px;
       }
 
-      .text-container>* {
+      .container__text__layout>* {
         text-align: left;
       }
 
-      .third-line {
+      .container__text__footer {
         grid-column: 1/4;
       }
 
-      .third-line>ul {
+      .container__text__footer>ul {
         display: flex;
         flex-direction: row;
         list-style: none;
@@ -112,33 +102,39 @@
       align-items: center;
     }
 
-    .text-border {
+    .container__text__layout {
+      display: grid;
+      box-sizing: border-box;
+      padding: 4rem;
       background-color: rgb(26, 25, 56);
+      font-family: "Inter";
     }
 
-    .first-line {
+
+    .container__text__title {
       grid-column: 1/4;
       margin-top: 0;
       font-weight: 700;
       font-size: 1.5rem;
     }
 
-    .second-line {
+    .container__text__content {
       grid-column: 1/4;
       color: rgb(102, 101, 124);
       margin-top: 0;
     }
 
-    .text-container>div {
+    .container__text__layout>div {
       padding-right: 1rem;
       margin-top: 1.5rem;
       text-transform: uppercase;
       color: rgb(102, 101, 124);
     }
 
-    .image-container {
-      background-color: rgb(122, 69, 165);
-      opacity: 0.4;
+    .container__image__bk {
+      background-color: rgb(122, 69, 165 , 50%);
+      width:100%;
+      height:100%;
     }
 
     p>span {
@@ -155,22 +151,23 @@
 
 <body>
   <div class='container'>
-    <div class="text-border">
-      <div class="text-container">
-        <p class="first-line">Get <span>insights</span> that help your business grow.</p>
-        <p class="second-line">Discover the benefits of data analytics and make better decisions regarding revenue,
-          customer
-          experience, and overall efficiency.</p>
-        <div class="third-line">
-          <ul>
-            <li><span>10k+</span> companies</li>
-            <li><span>314</span> templates</li>
-            <li><span>12m+</span> queries</li>
-          </ul>
-        </div>
+    <div class="container__text__layout">
+      <p class="container__text__title">Get <span>insights</span> that help your business grow.</p>
+      <p class="container__text__content">Discover the benefits of data analytics and make better decisions regarding
+        revenue,
+        customer
+        experience, and overall efficiency.</p>
+      <div class="container__text__footer">
+        <ul>
+          <li><span>10k+</span> companies</li>
+          <li><span>314</span> templates</li>
+          <li><span>12m+</span> queries</li>
+        </ul>
       </div>
     </div>
-    <div class="image-container"></div>
+    <div class="container__image">
+      <div class="container__image__bk"></div>
+    </div>
   </div>
 </body>
 
